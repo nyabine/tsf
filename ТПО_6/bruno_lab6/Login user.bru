@@ -1,0 +1,18 @@
+meta {
+  name: Login user
+  type: http
+  seq: 5
+}
+
+post {
+  url: https://reqres.in/api/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "george.bluth@reqres.in",
+    "password": "test"
+  }
+}

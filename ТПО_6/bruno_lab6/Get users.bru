@@ -1,0 +1,15 @@
+meta {
+  name: Get users
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://reqres.in/api/users?page=2
+  body: none
+  auth: none
+}
+
+params:query {
+  page: 2
+}

@@ -1,0 +1,17 @@
+meta {
+  name: Update user
+  type: http
+  seq: 6
+}
+
+patch {
+  url: https://reqres.in/api/users/2
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "test test"
+  }
+}

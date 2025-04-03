@@ -1,0 +1,22 @@
+meta {
+  name: Register new user
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://reqres.in/api/register
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "george.bluth@reqres.in",
+    "password": "test",
+    "name": "paul rudd"
+  }
+  
+  
+  
+}
