@@ -1,0 +1,34 @@
+meta {
+  name: Modify pet
+  type: http
+  seq: 3
+}
+
+put {
+  url: https://petfriends.skillfactory.ru/api/pets/{{petid}}
+  body: multipartForm
+  auth: none
+}
+
+headers {
+  accept: application/json
+  auth_key: {{auth_key}}
+  Content-Type: multipart/form-data
+}
+
+body:multipart-form {
+  name: France
+  animal_type: HELL
+  age: 3
+}
+
+tests {
+  test("status 200", () => {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("name changed", () => {
+    const oldName = bru.getVar("name");
+    expect(res.body.name).to.not.equal(oldName);
+  });
+}

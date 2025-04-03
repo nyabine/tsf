@@ -1,0 +1,21 @@
+
+meta {
+  name: Test 9
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://158.160.56.133/api/pet/?page=1&page_size=20&species__name=кот&breed__code=indian&gender__code=female&age=2
+  body: none
+  auth: none
+}
+
+params:query {
+  page: 1
+  page_size: 20
+  species__name: кот
+  breed__code: indian
+  gender__code: female
+  age: 2
+}

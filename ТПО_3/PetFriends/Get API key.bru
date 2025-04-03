@@ -1,0 +1,27 @@
+meta {
+  name: Get API key
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://petfriends.skillfactory.ru/api/key
+  body: none
+  auth: none
+}
+
+headers {
+  email: nilierine@gmail.com
+  password: amogus
+}
+
+script:post-response {
+  bru.setVar("auth_key", res.body.key);
+}
+
+tests {
+  test("status 200", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+}

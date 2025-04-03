@@ -1,0 +1,30 @@
+meta {
+  name: My pets
+  type: http
+  seq: 4
+}
+
+get {
+  url: https://petfriends.skillfactory.ru/api/pets?filter=my_pets
+  body: none
+  auth: none
+}
+
+params:query {
+  filter: my_pets
+}
+
+headers {
+  auth_key: {{auth_key}}
+}
+
+tests {
+  test("status 200", function () {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("name match", () => {
+    const name = bru.getVar("name");
+    expect(res.body.pets[0].name).to.not.equal(name);
+  });
+}
